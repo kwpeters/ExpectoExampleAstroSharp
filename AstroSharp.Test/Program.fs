@@ -4,9 +4,10 @@ open System
 open Expecto
 open AstroSharp.Core.Gravitation
 
-
+[<Tests>]
 let gravitationTests =
     testList "Gravitation Tests" [
+
         test "0 Distance Between Bodies" {
             let noneResult = getGravitationForce 10.0 10.0 0.0
             Expect.equal noneResult None "Result is None since the distance is 0"
@@ -28,4 +29,4 @@ let gravitationTests =
 
 [<EntryPoint>]
 let main argv =
-    runTestsWithArgs defaultConfig argv gravitationTests
+    runTestsInAssemblyWithCLIArgs [] argv
